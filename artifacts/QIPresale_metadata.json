@@ -1,0 +1,607 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_qiToken",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "EmergencyWithdraw",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "active",
+						"type": "bool"
+					}
+				],
+				"name": "PresaleStatusChanged",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "buyer",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "paymentToken",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "paymentAmount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "qiAmount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "usdValue",
+						"type": "uint256"
+					}
+				],
+				"name": "QIPurchased",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "symbol",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "tokenAddress",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "priceFeed",
+						"type": "address"
+					}
+				],
+				"name": "TokenAdded",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "MIN_PURCHASE_USD",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "PRESALE_TARGET",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "PRICE_FEED_PRECISION",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "QI_PRICE_USD",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "USD_PRECISION",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "buyWithETH",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "tokenSymbol",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "buyWithToken",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "usdcAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "buyWithUSDC",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "usdtAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "buyWithUSDT",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "wbtcAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "buyWithWBTC",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "tokenSymbol",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "calculateQIAmount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					}
+				],
+				"name": "emergencyWithdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					}
+				],
+				"name": "getContractBalance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getCurrentPrices",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "prices",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "string[]",
+						"name": "symbols",
+						"type": "string[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getPresaleStats",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "sold",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "raised",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "target",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "active",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "remaining",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getSupportedTokens",
+				"outputs": [
+					{
+						"internalType": "string[]",
+						"name": "symbols",
+						"type": "string[]"
+					},
+					{
+						"internalType": "address[]",
+						"name": "addresses",
+						"type": "address[]"
+					},
+					{
+						"internalType": "bool[]",
+						"name": "enabled",
+						"type": "bool[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "presaleActive",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "qiToken",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bool",
+						"name": "_active",
+						"type": "bool"
+					}
+				],
+				"name": "setPresaleStatus",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"name": "supportedTokens",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "tokenAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "contract AggregatorV3Interface",
+						"name": "priceFeed",
+						"type": "address"
+					},
+					{
+						"internalType": "uint8",
+						"name": "decimals",
+						"type": "uint8"
+					},
+					{
+						"internalType": "bool",
+						"name": "enabled",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "tokenSymbols",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalQISold",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalUSDRaised",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
+			}
+		],
+		"devdoc": {
+			"details": "Presale contract for QI Energy token with multiple currency support",
+			"kind": "dev",
+			"methods": {
+				"buyWithETH()": {
+					"details": "Purchase QI with ETH"
+				},
+				"buyWithToken(string,uint256)": {
+					"details": "Universal purchase function"
+				},
+				"buyWithUSDC(uint256)": {
+					"details": "Purchase QI with USDC"
+				},
+				"buyWithUSDT(uint256)": {
+					"details": "Purchase QI with USDT"
+				},
+				"buyWithWBTC(uint256)": {
+					"details": "Purchase QI with WBTC"
+				},
+				"calculateQIAmount(string,uint256)": {
+					"details": "Calculate QI token amount for given payment amount"
+				},
+				"constructor": {
+					"details": "Constructor - initialize presale contract",
+					"params": {
+						"_qiToken": "Address of QI Energy token contract"
+					}
+				},
+				"emergencyWithdraw(address)": {
+					"details": "Emergency withdraw function"
+				},
+				"getContractBalance(address)": {
+					"details": "Get contract balance"
+				},
+				"getCurrentPrices()": {
+					"details": "Get current prices of all supported tokens"
+				},
+				"getPresaleStats()": {
+					"details": "Get presale statistics"
+				},
+				"getSupportedTokens()": {
+					"details": "Get information about supported tokens"
+				},
+				"setPresaleStatus(bool)": {
+					"details": "Change presale status"
+				}
+			},
+			"title": "QI Energy Presale Contract",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"notice": "Target: $200M USD through sale of 20M QI tokens at $10 each",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/QIPresale.sol": "QIPresale"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/QIPresale.sol": {
+			"keccak256": "0x8d5f67e87c9cd997c46efdf4b2e9e410fd8bcff74e9a4062c57b8ae5fe8ad1f9",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://9ce86a074b8725dfa86bca791a5c8153e90d3e03292fbc5ec3145fbc338aa289",
+				"dweb:/ipfs/QmVqcCdLTEy7KJS9gZDo7TLBw27GqGvsHGnsSQjvhEvp8Y"
+			]
+		},
+		"contracts/interfaces/AggregatorV3Interface.sol": {
+			"keccak256": "0x59b91592caa37982ebbea6c1d42f9ad7bc4ca5f5bae056ca58ea465a2c296991",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e8b6fbf110d86ee0c297e025ed64100ab7f0a347acf7d75846603d12e561de55",
+				"dweb:/ipfs/QmV8UUn1kizg62Wt5zPqQery4jVcKDnT3oaWf2cnHxsfzh"
+			]
+		},
+		"contracts/interfaces/IERC20.sol": {
+			"keccak256": "0x682947b4e881acfb0fa8911a14f7a52642be9df44b63c7989d3f0a3c3c15a8ce",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://9832fd7fd35157e7567f603fde055dc1f6acef1ffecfde4a231aa11a5811314c",
+				"dweb:/ipfs/QmY8n3F6B3soBnghrRyGPgfPshpaarP7C6SsXMbKDNabCy"
+			]
+		}
+	},
+	"version": 1
+}
