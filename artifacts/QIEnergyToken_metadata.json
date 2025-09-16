@@ -667,7 +667,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"QIEnergyToken.sol": "QIEnergyToken"
+			"contracts/QIEnergyToken.sol": "QIEnergyToken"
 		},
 		"evmVersion": "prague",
 		"libraries": {},
@@ -737,7 +737,7 @@
 				"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
 			]
 		},
-		"QIEnergyToken.sol": {
+		"contracts/QIEnergyToken.sol": {
 			"keccak256": "0x4eee9487366f3ee4e499aaff5043f2afa92da6337a3716652c80911d2e6738f9",
 			"license": "MIT",
 			"urls": [
