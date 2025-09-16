@@ -18,7 +18,7 @@ contract QIPresale {
     uint256 public constant USD_PRECISION = 10**6; // USD precision (6 decimals)
     
     // === CONTRACT STATE ===
-    address public immutable owner;
+    address public owner;
     address public immutable qiToken;
     bool public presaleActive;
     uint256 public totalQISold;
@@ -46,8 +46,17 @@ contract QIPresale {
     event PresaleStatusChanged(bool active);
     event TokenAdded(string symbol, address tokenAddress, address priceFeed);
     event EmergencyWithdraw(address token, uint256 amount);
+    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
     
     // === MODIFIERS ===
+    bool private _reentrancyLock;
+    
+    modifier nonReentrant() {
+        require(!_reentrancyLock, "ReentrancyGuard: reentrant call");
+        _reentrancyLock = true;
+        _;
+        _reentrancyLock = false;
+    }
     modifier onlyOwner() {
         require(msg.sender == owner, "Not owner");
         _;
@@ -109,7 +118,7 @@ contract QIPresale {
     /**
      * @dev Purchase QI with ETH
      */
-    function buyWithETH() external payable presaleIsActive {
+    function buyWithETH() external payable presaleIsActive nonReentrant {
         require(msg.value > 0, "ETH amount must be > 0");
         
         uint256 qiAmount = calculateQIAmount("ETH", msg.value);
@@ -125,7 +134,7 @@ contract QIPresale {
     /**
      * @dev Purchase QI with USDT
      */
-    function buyWithUSDT(uint256 usdtAmount) external presaleIsActive {
+    function buyWithUSDT(uint256 usdtAmount) external presaleIsActive nonReentrant {
         require(usdtAmount > 0, "USDT amount must be > 0");
         
         uint256 qiAmount = calculateQIAmount("USDT", usdtAmount);
@@ -144,7 +153,7 @@ contract QIPresale {
     /**
      * @dev Purchase QI with USDC
      */
-    function buyWithUSDC(uint256 usdcAmount) external presaleIsActive {
+    function buyWithUSDC(uint256 usdcAmount) external presaleIsActive nonReentrant {
         require(usdcAmount > 0, "USDC amount must be > 0");
         
         uint256 qiAmount = calculateQIAmount("USDC", usdcAmount);
@@ -163,7 +172,7 @@ contract QIPresale {
     /**
      * @dev Purchase QI with WBTC
      */
-    function buyWithWBTC(uint256 wbtcAmount) external presaleIsActive {
+    function buyWithWBTC(uint256 wbtcAmount) external presaleIsActive nonReentrant {
         require(wbtcAmount > 0, "WBTC amount must be > 0");
         
         uint256 qiAmount = calculateQIAmount("WBTC", wbtcAmount);
@@ -182,7 +191,7 @@ contract QIPresale {
     /**
      * @dev Universal purchase function
      */
-    function buyWithToken(string memory tokenSymbol, uint256 amount) external payable presaleIsActive {
+    function buyWithToken(string memory tokenSymbol, uint256 amount) external payable presaleIsActive nonReentrant {
         TokenInfo memory token = supportedTokens[tokenSymbol];
         require(token.enabled, "Token not supported");
         
@@ -373,9 +382,18 @@ contract QIPresale {
     }
     
     /**
+     * @dev Transfer contract ownership to a new owner
+     */
+    function transferOwnership(address newOwner) external onlyOwner {
+        require(newOwner != address(0), "New owner is zero address");
+        emit OwnershipTransferred(owner, newOwner);
+        owner = newOwner;
+    }
+    
+    /**
      * @dev Emergency withdraw function
      */
-    function emergencyWithdraw(address token) external onlyOwner {
+    function emergencyWithdraw(address token) external onlyOwner nonReentrant {
         if (token == address(0)) {
             // Withdraw ETH
             uint256 balance = address(this).balance;
@@ -407,7 +425,7 @@ contract QIPresale {
     }
     
     // === FALLBACK ===
-    receive() external payable {
+    receive() external payable nonReentrant {
         if (msg.value > 0 && presaleActive) {
             uint256 qiAmount = calculateQIAmount("ETH", msg.value);
             require(qiAmount > 0, "Invalid QI amount");

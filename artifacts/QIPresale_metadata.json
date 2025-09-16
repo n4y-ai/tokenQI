@@ -39,6 +39,25 @@
 				"anonymous": false,
 				"inputs": [
 					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
 						"indexed": false,
 						"internalType": "bool",
 						"name": "active",
@@ -501,6 +520,19 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"stateMutability": "payable",
 				"type": "receive"
 			}
@@ -550,6 +582,9 @@
 				},
 				"setPresaleStatus(bool)": {
 					"details": "Change presale status"
+				},
+				"transferOwnership(address)": {
+					"details": "Transfer contract ownership to a new owner"
 				}
 			},
 			"title": "QI Energy Presale Contract",
@@ -579,11 +614,11 @@
 	},
 	"sources": {
 		"contracts/QIPresale.sol": {
-			"keccak256": "0x8d5f67e87c9cd997c46efdf4b2e9e410fd8bcff74e9a4062c57b8ae5fe8ad1f9",
+			"keccak256": "0x84a3b77adb7a3ca8db2e2a89a81943d55ee05792ed6e91ed8659d682e8c87844",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://9ce86a074b8725dfa86bca791a5c8153e90d3e03292fbc5ec3145fbc338aa289",
-				"dweb:/ipfs/QmVqcCdLTEy7KJS9gZDo7TLBw27GqGvsHGnsSQjvhEvp8Y"
+				"bzz-raw://0e7454fa700d3fb16353647b81a38ecc8a5ae183f51e3102cfa7fcf1168fa021",
+				"dweb:/ipfs/QmaivRPG3vQuREsh16hCNFL52xrcjgxwYMbTAJYkGb1zRy"
 			]
 		},
 		"contracts/interfaces/AggregatorV3Interface.sol": {
