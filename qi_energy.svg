@@ -1,0 +1,65 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradient for outer ring matching N4Y.AI style -->
+    <linearGradient id="ringGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00D4FF;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#6B46C1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00FF88;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Inner dark background -->
+    <radialGradient id="bgGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#2D3748;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1A202C;stop-opacity:1" />
+    </radialGradient>
+    
+    <!-- QI symbol glow -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="1" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Energy wave gradient -->
+    <linearGradient id="energyGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00D4FF;stop-opacity:0.8" />
+      <stop offset="50%" style="stop-color:#00FF88;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00D4FF;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Outer ring with gradient -->
+  <circle cx="16" cy="16" r="15" 
+          fill="none" 
+          stroke="url(#ringGradient)" 
+          stroke-width="2"/>
+  
+  <!-- Inner background -->
+  <circle cx="16" cy="16" r="13" 
+          fill="url(#bgGradient)"/>
+  
+  <!-- Stylized letter Q in the style of Logos Λ -->
+  <g filter="url(#glow)">
+    <!-- Letter Q with modern, clean styling -->
+    <path d="M 16 8 
+             C 20.5 8, 24 11.5, 24 16 
+             C 24 20.5, 20.5 24, 16 24 
+             C 11.5 24, 8 20.5, 8 16 
+             C 8 11.5, 11.5 8, 16 8 Z
+             M 16 11
+             C 18.8 11, 21 13.2, 21 16
+             C 21 18.8, 18.8 21, 16 21
+             C 13.2 21, 11 18.8, 11 16
+             C 11 13.2, 13.2 11, 16 11 Z" 
+          fill="#FFFFFF" 
+          fill-rule="evenodd"/>
+    
+    <!-- Q tail - distinctive diagonal line -->
+    <path d="M 19 19 L 23 23" 
+          stroke="#FFFFFF" 
+          stroke-width="2.5" 
+          stroke-linecap="round"/>
+  </g>
+</svg>

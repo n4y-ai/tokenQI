@@ -599,7 +599,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/QIPresale_flattened.sol": "QIPresale"
+			"contracts/QIPresale.sol": "QIPresale"
 		},
 		"evmVersion": "prague",
 		"libraries": {},
@@ -613,11 +613,28 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/QIPresale_flattened.sol": {
-			"keccak256": "0x7db0a999018886de8b154326b7991d5573f2c115a3301250a65ccda6fd0dc40b",
+		"contracts/QIPresale.sol": {
+			"keccak256": "0x84a3b77adb7a3ca8db2e2a89a81943d55ee05792ed6e91ed8659d682e8c87844",
+			"license": "MIT",
 			"urls": [
-				"bzz-raw://9d384d5fdff5cefa8cd784586ae2d6f22aee1d4dd2d3921d4dcd0109d0de096b",
-				"dweb:/ipfs/Qmdtoqb7qfpuWLfKrRj887mX9gqgQq7yzaVMuzUnx992X2"
+				"bzz-raw://0e7454fa700d3fb16353647b81a38ecc8a5ae183f51e3102cfa7fcf1168fa021",
+				"dweb:/ipfs/QmaivRPG3vQuREsh16hCNFL52xrcjgxwYMbTAJYkGb1zRy"
+			]
+		},
+		"contracts/interfaces/AggregatorV3Interface.sol": {
+			"keccak256": "0x59b91592caa37982ebbea6c1d42f9ad7bc4ca5f5bae056ca58ea465a2c296991",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e8b6fbf110d86ee0c297e025ed64100ab7f0a347acf7d75846603d12e561de55",
+				"dweb:/ipfs/QmV8UUn1kizg62Wt5zPqQery4jVcKDnT3oaWf2cnHxsfzh"
+			]
+		},
+		"contracts/interfaces/IERC20.sol": {
+			"keccak256": "0x682947b4e881acfb0fa8911a14f7a52642be9df44b63c7989d3f0a3c3c15a8ce",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://9832fd7fd35157e7567f603fde055dc1f6acef1ffecfde4a231aa11a5811314c",
+				"dweb:/ipfs/QmY8n3F6B3soBnghrRyGPgfPshpaarP7C6SsXMbKDNabCy"
 			]
 		}
 	},

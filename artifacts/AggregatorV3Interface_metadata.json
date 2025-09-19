@@ -145,10 +145,11 @@
 	},
 	"sources": {
 		"contracts/QIPresale_flattened.sol": {
-			"keccak256": "0x7db0a999018886de8b154326b7991d5573f2c115a3301250a65ccda6fd0dc40b",
+			"keccak256": "0x1646759e75acb1a1b3640cb6a5a88c9647ded642e2dbffe8a14b368adac4d79c",
+			"license": "MIT",
 			"urls": [
-				"bzz-raw://9d384d5fdff5cefa8cd784586ae2d6f22aee1d4dd2d3921d4dcd0109d0de096b",
-				"dweb:/ipfs/Qmdtoqb7qfpuWLfKrRj887mX9gqgQq7yzaVMuzUnx992X2"
+				"bzz-raw://8f2399a88f9def05fe6d2f889ea7bd54b4faf10f77720247e41f475c438d3488",
+				"dweb:/ipfs/QmP1K1iHLXT1Ac6mWc9S4kL6fMZYQg3yGQGBW5UbvJwsTg"
 			]
 		}
 	},
