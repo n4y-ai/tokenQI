@@ -4,6 +4,10 @@
   "timestamp": "2025-09-21T00:00:00+00:00",
   "version": { "major": 1, "minor": 0, "patch": 0 },
   "keywords": ["qi", "energy", "base", "n4y-ai"],
+  "tags": {
+    "official": { "name": "Official", "description": "Official Qi Energy token" },
+    "base": { "name": "Base", "description": "Deployed on Base mainnet" }
+  },
   "tokens": [
     {
       "chainId": 8453,
@@ -11,7 +15,14 @@
       "name": "QI Energy",
       "symbol": "QI",
       "decimals": 18,
-      "logoURI": "https://raw.githubusercontent.com/n4y-ai/tokenQI/main/qi_energy.svg"
+      "logoURI": "https://raw.githubusercontent.com/n4y-ai/tokenQI/main/qi_energy.svg",
+      "tags": ["official", "base"],
+      "extensions": {
+        "website": "https://n4y.ai",
+        "documentation": "https://github.com/n4y-ai/tokenQI",
+        "telegram": "https://t.me/n4y_ai",
+        "twitter": "https://x.com/n4y_ai"
+      }
     }
   ]
 }
