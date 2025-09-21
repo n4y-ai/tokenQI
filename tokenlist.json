@@ -1,0 +1,17 @@
+{
+  "$schema": "https://uniswap.org/tokenlist.schema.json",
+  "name": "Qi Energy Token List",
+  "timestamp": "2025-09-21T00:00:00+00:00",
+  "version": { "major": 1, "minor": 0, "patch": 0 },
+  "keywords": ["qi", "energy", "base", "n4y-ai"],
+  "tokens": [
+    {
+      "chainId": 8453,
+      "address": "0x29897314A089fA75AC48eb66408c91751c26c588",
+      "name": "QI Energy",
+      "symbol": "QI",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/n4y-ai/tokenQI/main/qi_energy.svg"
+    }
+  ]
+}
