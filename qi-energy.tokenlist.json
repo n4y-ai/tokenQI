@@ -3,7 +3,7 @@
   "name": "Qi Energy Token List",
   "timestamp": "2025-09-28T00:00:00+00:00",
   "version": { "major": 1, "minor": 0, "patch": 1 },
-  "keywords": ["qi", "energy", "base", "n4y-ai"],
+  "keywords": ["qi", "energy", "base", "n4y ai", "logos"],
   "tags": {
     "official": { "name": "Official", "description": "Official Qi Energy token" },
     "base": { "name": "Base", "description": "Deployed on Base mainnet" }
