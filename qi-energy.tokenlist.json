@@ -1,8 +1,8 @@
 {
   "$schema": "https://uniswap.org/tokenlist.schema.json",
   "name": "Qi Energy Token List",
-  "timestamp": "2025-09-21T00:00:00+00:00",
-  "version": { "major": 1, "minor": 0, "patch": 0 },
+  "timestamp": "2025-09-28T00:00:00+00:00",
+  "version": { "major": 1, "minor": 0, "patch": 1 },
   "keywords": ["qi", "energy", "base", "n4y-ai"],
   "tags": {
     "official": { "name": "Official", "description": "Official Qi Energy token" },
