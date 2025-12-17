@@ -15,7 +15,7 @@
       "name": "QI Energy",
       "symbol": "QI",
       "decimals": 18,
-      "logoURI": "https://raw.githubusercontent.com/n4y-ai/tokenQI/main/qi_energy.svg",
+      "logoURI": "https://raw.githubusercontent.com/n4y-ai/tokenQI/main/logos.svg",
       "tags": ["official", "base"],
       "extensions": {
         "website": "https://n4y.ai",
